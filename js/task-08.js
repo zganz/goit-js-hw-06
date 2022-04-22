@@ -1,10 +1,18 @@
-// const formEl = document.querySelector(".login-form");
-// console.log(formEl);
+const formEl = document.querySelector(".login-form");
+console.log(formEl);
 
+formEl.addEventListener("submit", handleSubmit);
 
-const ref = {
-    input: document.querySelector('#controls input'),
-    btnRender: document.querySelector('#controls[data-action="render"]'),
-    btnDestroy: document.querySelector('#controls[data-action="destroy"]'),
-    boxEl: document.querySelector('#boxes'),
-  };
+function handleSubmit(event) {
+  event.preventDefault();
+  const {
+    elements: { email, password }
+  } = event.currentTarget;
+
+  if (email.value === "" || password.value === "") {
+    alert("Поля должны быть заполнены!");
+  }
+
+  console.log(`Email: ${email.value}, Password: ${password.value}`);
+  event.currentTarget.reset();
+}
