@@ -1,12 +1,13 @@
 const inputEl = document.querySelector('#validation-input');
 console.log(inputEl);
 const lengthEl = inputEl.getAttribute('data-length');
-console.log(lengthEl);
+console.log( typeof lengthEl);
+
 
 
 
 inputEl.onblur = function() {
-    if(inputEl.value.length == lengthEl){
+    if(inputEl.value.length === Number(lengthEl)){
         
         inputEl.classList.add('valid'); 
         inputEl.classList.remove('invalid');

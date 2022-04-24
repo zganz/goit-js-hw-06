@@ -19,7 +19,7 @@ const galleryEl = document.querySelector(".gallery")
 let imagesHtml = "";
 
 images.forEach(function(element){
-  let str = `<li><img width = 50% src=${element.url} alt=${element.alt}></li>`;
+  let str = `<li><img width = 50% src="${element.url}" alt="${element.alt}"></li>`;
 imagesHtml += str;
   console.log(str);
 });
